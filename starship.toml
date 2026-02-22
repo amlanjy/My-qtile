@@ -1,0 +1,52 @@
+# Get a full blank line between prompts
+add_newline = true
+
+# Use custom symbols for the "Pill" look
+format = """
+[](#87ceeb)\
+$os\
+$directory\
+[](fg:#87ceeb bg:#3b4252)\
+$git_branch\
+$git_status\
+[](fg:#3b4252 bg:#2e3440)\
+$python\
+$nodejs\
+$rust\
+[](fg:#2e3440)
+$character"""
+
+[os]
+disabled = false
+style = "bg:#87ceeb fg:#1a1b26"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Arch = "󰣇 "
+
+[directory]
+style = "bg:#87ceeb fg:#1a1b26"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:#3b4252"
+format = "[[ $symbol $branch ](fg:#87ceeb bg:#3b4252)]($style)"
+
+[git_status]
+style = "bg:#3b4252"
+format = "[[($all_status$ahead_behind )](fg:#87ceeb bg:#3b4252)]($style)"
+
+[python]
+symbol = ""
+style = "bg:#2e3440"
+format = "[[ $symbol ($version) ](fg:#87ceeb bg:#2e3440)]($style)"
+
+[character]
+success_symbol = "[󰄾](bold #87ceeb)"
+error_symbol = "[󰄾](bold #ff5555)"
+
+[line_break]
+disabled = false
