@@ -1,0 +1,148 @@
+/*******************************************************************************
+ * ROFI Color Theme - Modern "Omarchy" Style
+ *******************************************************************************/
+
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 true;
+    display-drun:               "";   /* App Grid Icon */
+    display-run:                "";   /* Terminal Icon */
+    display-filebrowser:        "";
+    display-window:             "";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+    
+    /* FONT IMPORTANT: Make sure you have a Nerd Font installed */
+    font:                       "JetBrainsMono Nerd Font 10";
+}
+
+/***** GLOBAL PROPERTIES *****/
+* {
+    background:     #1E2127FF;  /* Dark Grey Background */
+    background-alt: #282B31FF;  /* Slightly Lighter for Input */
+    foreground:     #FFFFFFFF;  /* White Text */
+    selected:       #61AFEFFF;  /* Blue Accent */
+    active:         #98C379FF;  /* Green for active elements */
+    urgent:         #E06C75FF;  /* Red for urgent */
+    
+    border-color:   @selected;
+}
+
+window {
+    /* Floating Center Window */
+    transparency:       "real";
+    location:           center;
+    anchor:             center;
+    fullscreen:         false;
+    width:              600px;
+    x-offset:           0px;
+    y-offset:           0px;
+
+    /* Styling */
+    enabled:            true;
+    margin:             0px;
+    padding:            0px;
+    border:             2px;
+    border-radius:      12px;
+    border-color:       @border-color;
+    cursor:             "default";
+    background-color:   @background;
+}
+
+/***** INPUT BAR *****/
+inputbar {
+    enabled:            true;
+    spacing:            10px;
+    margin:             0px;
+    padding:            15px;
+    border:             0px solid;
+    border-radius:      12px 12px 0px 0px;
+    border-color:       @selected;
+    background-color:   @background-alt;
+    text-color:         @foreground;
+    children:           [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:            true;
+    background-color:   inherit;
+    text-color:         inherit;
+}
+
+entry {
+    enabled:            true;
+    background-color:   inherit;
+    text-color:         inherit;
+    cursor:             text;
+    placeholder:        "Search...";
+    placeholder-color:  inherit;
+}
+
+/***** LISTVIEW *****/
+listview {
+    enabled:            true;
+    columns:            1;
+    lines:              8;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    layout:             vertical;
+    reverse:            false;
+    fixed-height:       true;
+    fixed-columns:      true;
+    
+    spacing:            5px;
+    margin:             0px;
+    padding:            10px;
+    border:             0px solid;
+    border-radius:      0px;
+    border-color:       @selected;
+    background-color:   transparent;
+    text-color:         @foreground;
+    cursor:             "default";
+}
+
+/***** ELEMENTS *****/
+element {
+    enabled:            true;
+    spacing:            10px;
+    margin:             0px;
+    padding:            8px;
+    border:             0px solid;
+    border-radius:      8px;
+    border-color:       @selected;
+    background-color:   transparent;
+    text-color:         @foreground;
+    cursor:             pointer;
+}
+
+element normal.normal {
+    background-color:   transparent;
+    text-color:         @foreground;
+}
+
+element alternate.normal {
+	background-color:	transparent;
+	text-color:			@foreground;
+}
+
+element selected.normal {
+    background-color:   @selected;
+    text-color:         @background;
+}
+
+element-icon {
+    background-color:   transparent;
+    text-color:         inherit;
+    size:               24px;
+    cursor:             inherit;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    highlight:          inherit;
+    cursor:             inherit;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+}
